@@ -1,0 +1,23 @@
+<section class="experience_project">
+  <div class="section_project_title">
+      <h2>Proyectos</h2>
+          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/add_icon.png" alt="pen-solid"></button>
+  </div>
+
+  <div class="section_experience_project_card"  *ngFor="let item of myProyecto">
+
+    <div class="section_experience_project_details">
+          <div>
+              <h2 class="text-info">{{item.nombreProyecto}}</h2>
+              <p>{{item.descripcionProyecto}}</p>
+          </div>
+      </div>
+      <div class="button_project">
+          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/edit-pen.png" alt="pen-solid"></button>
+          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/del_icon.png" alt="pen-solid"></button>
+      </div>
+
+  </div>
+</section>
+
+

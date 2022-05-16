@@ -1,0 +1,30 @@
+<section class="experience_skill">
+  <div class="section_skill_title">
+      <h2>Hard Skill & Soft Skills</h2>
+          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/add_icon.png" alt="pen-solid"></button>
+  </div>
+
+  <div *ngFor="let item of myTecnologia">
+    <div class="skill" >
+          <div class="skill_align">
+              <p>{{item.descripcionHabilidades}}</p>
+          </div>
+          <div>
+              <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/edit-pen.png" alt="pen-solid"></button>
+              <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/del_icon.png" alt="pen-solid"></button>
+          </div>
+
+  </div>
+  <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+               role="progressbar"
+               aria-valuenow="0"
+               aria-valuemin="0"
+               aria-valuemax="100"
+               style="width:{{item.porcentajeHabilidades}}%"
+               >
+              <!-- consultar como asignar {{item.porcentajeHabilidades}} -->
+            </div>
+  </div>
+  </div>
+</section>

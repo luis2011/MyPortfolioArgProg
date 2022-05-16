@@ -1,0 +1,332 @@
+<section class="experience_education">
+  <div class="section_experience_title">
+      <h2>Experiencia</h2>
+          <!-- <button class="btn bg-light-50 " (click)="createNewExperiencia()"><img src="./assets/add_icon.png" alt="pen-solid"></button> -->
+   <!-- Button trigger modal -->
+  <button type="button" class="btn btn bg-light-50" data-bs-toggle="modal"
+  data-bs-target="#createExperience">
+  <img src="./assets/add_icon.png" alt="pen-solid">
+  </button>
+
+  </div>
+
+<!-- Modal Crear Experiencia -->
+<div class="modal fade" id="createExperience" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel3">Agregar Experiencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" >
+
+        <!-- cuerpo del modal con el formulario -->
+        <form
+class="add-form"
+(ngSubmit)="createNewExperiencia()"
+>
+  <div class="form-control">
+   <label for="text">Descripción del Trabajo</label>
+   <input
+      type="text"
+      name="descripcionTrabajo"
+      id="descripcionTrabajo"
+      placeholder="Ingrese una descripción del trabajo"
+      class="form-control"
+      [(ngModel)] = "descripcionTrabajo"
+      />
+  </div>
+
+  <div class="form-control">
+    <label for="text">Nombre de la Empresa</label>
+    <input
+       type="text"
+       name="nombreEmpresa"
+       id="nombreEmpresa"
+       placeholder="Ingrese el nombre de la empresa"
+       class="form-control"
+       [(ngModel)] = "nombreEmpresa"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Tipo de Jornada</label>
+    <input
+       type="text"
+       name="tipoJornada"
+       id="tipoJornada"
+       placeholder="Ingrese el tipo de Jornada"
+       class="form-control"
+       [(ngModel)] = "tipoJornada"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Fecha de Ingreso</label>
+    <input
+       type="date"
+       name="fechaEntrada"
+       id="fechaEntrada"
+       placeholder="Ingrese fecha de Ingreso"
+       class="form-control"
+       [(ngModel)] = "fechaEntrada"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Fecha de Egreso</label>
+    <input
+       type="date"
+       name="fechaSalida"
+       id="fechaSalida"
+       placeholder="Ingrese fecha de Egreso"
+       class="form-control"
+       [(ngModel)] = "fechaSalida"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Localidad</label>
+    <input
+       type="text"
+       name="localidad"
+       id="localidad"
+       placeholder="Ingrese localidad de la Empresa"
+       class="form-control"
+       [(ngModel)] = "localidad"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Pais</label>
+    <input
+       type="text"
+       name="pais"
+       id="pais"
+      placeholder="Ingrese Pais de la Empresa"
+       class="form-control"
+       [(ngModel)] = "pais"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Subir Imagen</label>
+    <input
+       type="text"
+       name="imagenDeEmpresa"
+       id="imagenDeEmpresa"
+       placeholder="Ingrese url de Imagen de la Empresa"
+       class="form-control"
+       [(ngModel)] = "imagenDeEmpresa"
+       />
+   </div>
+
+   <input type="submit" value="Save Task" class="btn btn-block">
+</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="createNewExperiencia()" data-bs-dismiss="modal" aria-label="Close">
+          Guardar
+       </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Crear Experiencia -->
+
+<!-- modificar Experiencia -->
+<div class="modal fade"
+id="updateExperience"
+tabindex="-1"
+aria-labelledby="exampleModalLabel2"
+aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">Modificar Experiencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <!-- cuerpo del modal con el formulario -->
+        <form
+        class="add-form"
+        (ngSubmit)="updateExperiencia()"
+        >
+        <div class="form-control">
+          <label for="text">Descripción del Trabajo</label>
+        <input
+      type="text"
+      name="descripcionTrabajo"
+      id="descripcionTrabajo"
+      placeholder="Ingrese una descripción del trabajo"
+      [(ngModel)] = "descripcionTrabajo"
+      class="form-control"
+      />
+      </div>
+
+
+
+    <div class="form-control">
+    <label for="text">Nombre de la Empresa</label>
+    <input
+       type="text"
+       name="nombreEmpresa"
+       id="nombreEmpresa"
+       placeholder="Ingrese el nombre de la empresa"
+       class="form-control"
+       [(ngModel)] = "nombreEmpresa"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Tipo de Jornada</label>
+    <input
+       type="text"
+       name="tipoJornada"
+       id="tipoJornada"
+       placeholder="Ingrese el tipo de Jornada"
+       class="form-control"
+       [(ngModel)] = "tipoJornada"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Fecha de Ingreso</label>
+    <input
+       type="text"
+       name="fechaEntrada"
+       id="fechaEntrada"
+       placeholder="Ingrese fecha de Ingreso"
+       class="form-control"
+       [(ngModel)] = "fechaEntrada"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Fecha de Egreso</label>
+    <input
+       type="text"
+       name="fechaSalida"
+       id="fechaSalida"
+       placeholder="Ingrese fecha de Egreso"
+       class="form-control"
+       [(ngModel)] = "fechaSalida"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Localidad</label>
+    <input
+       type="text"
+       name="localidad"
+       id="localidad"
+       placeholder="Ingrese localidad de la Empresa"
+       class="form-control"
+       [(ngModel)] = "localidad"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Pais</label>
+    <input
+       type="text"
+       name="pais"
+       id="pais"
+       placeholder="Ingrese Pais de la Empresa"
+       class="form-control"
+       [(ngModel)] = "pais"
+       />
+   </div>
+
+   <div class="form-control">
+    <label for="text">Subir Imagen</label>
+    <input
+       type="text"
+       name="imagenDeEmpresa"
+       id="imagenDeEmpresa"
+       placeholder="Ingrese url de Imagen de la Empresa"
+       class="form-control"
+       [(ngModel)] = "imagenDeEmpresa"
+       />
+   </div>
+
+   <!-- <input type="submit" class="btn btn-block"> -->
+</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="updateExperiencia()" data-bs-dismiss="modal" aria-label="Close">
+          Guardar
+       </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- fin modificar Experiencia -->
+
+
+  <!-- add card experience-->
+  <div class="section_experience_description_card" *ngFor="let item of myExperiencia">
+        <div class="section_experience_description_details">
+            <div class="section_experience_description_details__img">
+                <img src="./assets/backend Developer.png" alt="business logo" >
+            </div>
+            <div>
+                <h2>{{item.descripcionTrabajo}}</h2>
+                <p>{{item.nombreEmpresa}} - {{item.tipoJornada}}</p>
+                <p>{{item.fechaEntrada}} - {{item.fechaSalida}}</p>
+                <p>{{item.localidad}}, {{item.pais}}</p>
+            </div>
+        </div>
+
+        <div>
+            <button class="btn bg-light-50 "
+            (click)="editExperience(item.id)"
+            data-bs-toggle="modal"
+            data-bs-target="#updateExperience">
+              <img src="./assets/edit-pen.png" alt="pen-solid">
+          </button>
+            <button class="btn bg-light-50 " (click)="delExperience(item.id)"><img src="./assets/del_icon.png" alt="pen-solid"></button>
+        </div>
+  </div>
+  <!-- end add card experience -->
+
+
+
+
+
+  <!-- add card education-->
+  <div class="section_education_title">
+      <h2>Educación</h2>
+          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/add_icon.png" alt="pen-solid"></button>
+  </div>
+   <!-- add card education first-->
+   <div class="section_education_description_card " *ngFor="let item of myEducacion">
+      <div class="section_education_description_details">
+          <div class="section_education_description_details__img">
+              <img src="./assets/logo_utn.png" alt="utn logo" >
+          </div>
+          <div>
+              <h2>{{item.nombreInstitution}}</h2>
+              <p>{{item.nombreCarrera}}</p>
+              <p>{{item.fechaInicio}} - {{item.fechaFin}}</p>
+
+          </div>
+      </div>
+
+      <div>
+          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/edit-pen.png" alt="pen-solid"></button>
+          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/del_icon.png" alt="pen-solid"></button>
+      </div>
+  </div>
+</section>

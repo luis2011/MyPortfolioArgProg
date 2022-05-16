@@ -1,0 +1,33 @@
+.experience_skill{
+  /* display:flex; */
+  /* justify-content: space-between; */
+  height: auto;
+  width: 98%;
+  margin: 20px auto;
+  border: 1px solid black;
+  padding: 5px 0 0 auto;
+  border-radius: 25px;
+}
+.section_skill_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left:20px;
+  margin-right:20px;
+}
+.section_skill_title h2{
+  font-weight: 600;
+  padding-top: 15px;
+}
+.skill{
+  display: flex;
+  justify-content: center;
+  margin-right: 130px;
+}
+.skill_align{
+margin: 0 auto;
+}
+.progress{
+  max-width: 60%;
+  margin: 0 auto 20px;
+}

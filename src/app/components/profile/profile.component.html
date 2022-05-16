@@ -1,0 +1,253 @@
+<section class="main_profile">
+  <div class="main_profile_container">
+    <div class="main_profile_data" *ngFor="let item of myPorfolio">
+      <!-- {{item.id}} -->
+      <img src="../../../assets/profile.jpg" alt="profile" class="main_profile__imgProfile">
+      <!-- <img
+                    [src]="myPorfolio.imageProfile"
+                    alt="profile"
+                    class="main_profile__imgProfile"> -->
+      <h1>{{item.nombre}} {{item.apellido }}</h1>
+      <h2>{{item.titulo}}</h2>
+      <p *ngFor="let itemD of myDomicilio">
+        {{itemD.localidad}} ({{itemD.pais}})
+
+      <button type="button" class="btn bg-light-50" data-bs-toggle="modal" data-bs-target="#personaModal"
+          (click)="editPersona(item.id)">
+          <img src="./assets/edit-pen.png" alt="pen-solid">
+      </button></p>
+    </div>
+
+    <div class="main_profile_data">
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-outline-info bg-info text-light btn-profile" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        Más Información
+      </button>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Información de Contacto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" >
+              <h4 *ngFor="let item of myDomicilio">
+                Domicilio: {{item.direccion}}
+              </h4>
+              <h4 *ngFor="let item of myPorfolio">
+                Telefono: {{item.telefono}} <br>
+                Email: {{item.email}}</h4>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="main_profile_container_logo">
+    <img src="./assets/banner1-logonuevo_1000_200.jpg" alt="school Urquiza" class="img-fluid">
+  </div>
+</section>
+
+<section class="about">
+  <div>
+    <div class="section_about_title">
+      <h2>Acerca de</h2>
+    </div>
+    <div class="section_about_description" *ngFor="let item of myPorfolio">
+      <p >
+        {{item.acercaDe}}
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Button trigger modal -->
+  <div class="section_about_icon">
+  <button type="button" class="btn bg-light-50" data-bs-toggle="modal" data-bs-target="#aboutModal"
+          (click)="editAbout(1)">
+    <img src="./assets/edit-pen.png" alt="pen-solid">
+  </button>
+</div>
+</section>
+<!-- modal aboute -->
+<!-- Modal -->
+<div class="modal" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+  <div class="modal-dialog"style="width:600px; height:50px;">
+    <div class="modal-content">
+      <div class="modal-header" >
+        <h5 class="modal-title" id="aboutModalLabel">Modificar Sobre Mi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form
+        class="add-form"
+        (ngSubmit)="updateabout()"
+        >
+        <div class="form-control">
+         <textarea
+          type="text"
+          name="acercaDe"
+          id="acercaDe"
+          [(ngModel)] = "acercaDe"
+          class="form-control">
+         </textarea>
+      </div>
+
+      </form>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary" (click)="updateabout()" data-bs-dismiss="modal">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fin modal about -->
+
+
+<!-- modal Persona -->
+<!-- Modal -->
+<div class="modal" id="personaModal" tabindex="-1" aria-labelledby="personaModalLabel" aria-hidden="true">
+  <div class="modal-dialog"style="width:600px; height:50px;">
+    <div class="modal-content">
+      <div class="modal-header" >
+        <h5 class="modal-title" id="personaModalLabel">Modificar Sobre Mi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form
+        class="add-form"
+        (ngSubmit)="updatePersona()"
+        >
+        <div class="form-control">
+          <label for="text">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              [(ngModel)] ="nombre"
+              class="form-control"
+            />
+        </div>
+        <div class="form-control">
+          <label for="text">Apellido</label>
+            <input
+              type="text"
+              name="apellido"
+              id="apellido"
+              [(ngModel)] ="apellido"
+              class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              [(ngModel)] ="email"
+              class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Telefono</label>
+            <input
+              type="text"
+              name="telefono"
+              id="telefono"
+              [(ngModel)] ="telefono"
+              class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Título</label>
+            <input
+              type="text"
+              name="titulo"
+              id="titulo"
+              [(ngModel)] ="titulo"
+              class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Imagen</label>
+            <input
+              type="text"
+              name="imagenDePerfil"
+              id="imagenDePerfil"
+              [(ngModel)] ="imagenDePerfil"
+              class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Dirección</label>
+              <input
+                type="text"
+                name="direccion"
+                id="direccion"
+                [(ngModel)] = "direccion"
+                class="form-control"
+              />
+         </div>
+
+         <div class="form-control">
+          <label for="text">Código Postal</label>
+              <input
+                type="text"
+                name="codigoPostal"
+                id="codigoPostal"
+                [(ngModel)] = "codigoPostal"
+                class="form-control"
+              />
+         </div>
+
+        <div class="form-control">
+          <label for="text">Localidad</label>
+              <input
+                type="text"
+                name="localidad"
+                id="localidad"
+                [(ngModel)] = "localidad"
+                class="form-control"
+              />
+        </div>
+
+        <div class="form-control">
+          <label for="text">País</label>
+              <input
+                type="text"
+                name="pais"
+                id="pais"
+                [(ngModel)] = "pais"
+                class="form-control"
+              />
+         </div>
+
+       </form>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary" (click)="updatePersona()" data-bs-dismiss="modal">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fin modal persona -->
+

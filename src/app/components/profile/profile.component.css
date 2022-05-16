@@ -1,0 +1,65 @@
+.main_profile{
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  width: 98%;
+  margin: 10px auto;
+  border: 1px solid black;
+  padding: 5px 0 0 auto;
+  border-radius: 25px;
+  /* background-image: url(./assets/bg_image_main.jpg); */
+  background-image: url(../../../assets/bg_image_main.jpg);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -300px;
+}
+.main_profile_container{
+  padding-top:380px;
+}
+.main_profile_container_logo{
+  padding-top:500px;
+  margin-right: 50px;
+  width: 250px;
+  height: 250px;
+
+}
+.main_profile_data{
+  margin-left: 20px;
+  padding-bottom: 10px;
+
+}
+.main_profile__imgProfile{
+  border-radius: 100px;
+}
+.btn-profile{
+  border-radius: 10px;
+  margin: 0 5px auto;
+}
+
+/*section about*/
+.about{
+  display:flex;
+  justify-content: space-between;
+  height: auto;
+  width: 98%;
+  margin: 20px auto;
+  border: 1px solid black;
+  padding: 5px 0 0 auto;
+  border-radius: 25px;
+}
+.section_about_title{
+  margin-left:20px;
+  /* padding-left:5px; */
+}
+.section_about_title h2{
+  font-weight: 600;
+}
+.section_about_description{
+  padding-left:20px;
+}
+.section_about_icon{
+  margin-right:30px;
+  margin-top: 5px;
+}
+/*end section about*/
