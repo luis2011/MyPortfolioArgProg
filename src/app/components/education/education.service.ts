@@ -15,4 +15,20 @@ export class EducationService {
   getEducacion():Observable<any> {
     return this.http.get(`${this.urlMain}Educacion`);// representa el http a consultar
 }
+getEducacionId(id:number):Observable<any> {
+  return this.http.get(`${this.urlMain}Educacion/${id}`);// representa el http a consultar
+}
+
+createEducacion(createEdu: any):Observable<any> {
+  return this.http.post(`${this.urlMain}Educacion`, createEdu);// representa el http a consultar
+}
+
+updateEducacion(id:number, updateExp: any): Observable<any> {
+  return this.http.put(`${this.urlMain}Educacion/${id}`, updateExp);
+}
+
+deleteEducacion(id:number): Observable<any> {
+  return this.http.delete(`${this.urlMain}Educacion/${id}`);
+}
+
 }

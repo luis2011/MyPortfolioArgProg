@@ -302,14 +302,105 @@ aria-hidden="true"
   <!-- end add card experience -->
 
 
-
+<hr>
 
 
   <!-- add card education-->
   <div class="section_education_title">
       <h2>Educación</h2>
-          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/add_icon.png" alt="pen-solid"></button>
+          <!-- Button trigger modal -->
+      <button class="btn bg-light-50 " data-bs-toggle="modal" data-bs-target="#exampleModal4">
+            <img src="./assets/add_icon.png" alt="pen-solid">
+        </button>
   </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel4">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form
+        class="add-form"
+        (ngSubmit)="createNewEducation()"
+        >
+        <div class="form-control">
+          <label for="text">Nombre de la Institución</label>
+        <input
+            type="text"
+            name="nombreInstitucion"
+            id="nombreInstitucion"
+            placeholder="Ingrese nombre de la institución"
+            [(ngModel)] = "nombreInstitucion"
+            class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Nombre de la Carrera</label>
+        <input
+            type="text"
+            name="nombreCarrera"
+            id="nombreCarrera"
+            placeholder="Ingrese nombre de la Carrera"
+            [(ngModel)] = "nombreCarrera"
+            class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Fecha de Inicio</label>
+        <input
+            type="text"
+            name="fechaInicio"
+            id="fechaInicio"
+            placeholder="Ingrese fecha de Inicio"
+            [(ngModel)] = "fechaInicio"
+            class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Fecha de finalización</label>
+        <input
+            type="text"
+            name="fechaFin"
+            id="fechaFin"
+            placeholder="Ingrese fecha de Finalización"
+            [(ngModel)] = "fechaFin"
+            class="form-control"
+            />
+
+            <div class="form-control">
+              <label for="text">Imagen de la Institución</label>
+            <input
+                type="text"
+                name="imagenDeInstitucion"
+                id="imagenDeInstitucion"
+                placeholder="Ingrese nombre de la institución"
+                [(ngModel)] = "imagenDeInstitucion"
+                class="form-control"
+                />
+            </div>
+        </div>
+
+
+      </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="createNewEducation()" data-bs-dismiss="modal">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
    <!-- add card education first-->
    <div class="section_education_description_card " *ngFor="let item of myEducacion">
       <div class="section_education_description_details">
@@ -317,16 +408,105 @@ aria-hidden="true"
               <img src="./assets/logo_utn.png" alt="utn logo" >
           </div>
           <div>
-              <h2>{{item.nombreInstitution}}</h2>
+              <h2>{{item.nombreInstitucion}}</h2>
               <p>{{item.nombreCarrera}}</p>
               <p>{{item.fechaInicio}} - {{item.fechaFin}}</p>
-
           </div>
       </div>
 
       <div>
-          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/edit-pen.png" alt="pen-solid"></button>
-          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/del_icon.png" alt="pen-solid"></button>
+        <button class="btn bg-light-50 " data-bs-toggle="modal" data-bs-target="#exampleModal5" (click)="editEdu(item.id)">
+          <img src="./assets/edit-pen.png" alt="pen-solid">
+      </button>
+
+      <button class="btn bg-light-50 " (click)="deleteEdu(item.id)"><img src="./assets/del_icon.png" alt="pen-solid"></button>
       </div>
   </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel5">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <!-- modificacion de Educacion -->
+        <form
+        class="add-form"
+        (ngSubmit)="updateEdu()"
+        >
+        <div class="form-control">
+          <label for="text">Nombre de la Institución</label>
+        <input
+            type="text"
+            name="nombreInstitucion"
+            id="nombreInstitucion"
+            placeholder="Ingrese nombre de la institución"
+            [(ngModel)] = "nombreInstitucion"
+            class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Nombre de la Carrera</label>
+        <input
+            type="text"
+            name="nombreCarrera"
+            id="nombreCarrera"
+            placeholder="Ingrese nombre de la Carrera"
+            [(ngModel)] = "nombreCarrera"
+            class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Fecha de Inicio</label>
+        <input
+            type="text"
+            name="fechaInicio"
+            id="fechaInicio"
+            placeholder="Ingrese fecha de Inicio"
+            [(ngModel)] = "fechaInicio"
+            class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Fecha de finalización</label>
+        <input
+            type="text"
+            name="fechaFin"
+            id="fechaFin"
+            placeholder="Ingrese fecha de Finalización"
+            [(ngModel)] = "fechaFin"
+            class="form-control"
+            />
+
+            <div class="form-control">
+              <label for="text">Imagen de la Institución</label>
+            <input
+                type="text"
+                name="imagenDeInstitucion"
+                id="imagenDeInstitucion"
+                placeholder="Ingrese nombre de la institución"
+                [(ngModel)] = "imagenDeInstitucion"
+                class="form-control"
+                />
+            </div>
+        </div>
+
+
+      </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="updateEdu()" data-bs-dismiss="modal">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </section>
