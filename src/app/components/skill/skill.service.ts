@@ -19,4 +19,21 @@ export class SkillService {
   getTecnologia():Observable<any> {
       return this.http.get(`${this.urlMain}Tecnologias`);// representa el http a consultar
   }
+
+  getTecnologiaId(id:number):Observable<any> {
+    return this.http.get(`${this.urlMain}Tecnologias/${id}`);// representa el http a consultar
+  }
+
+  addTecnologia(createTec:any):Observable<any>{
+    return this.http.post(`${this.urlMain}Tecnologias`, createTec);
+  }
+
+  updateTecnologia(id:number, updateTec:any):Observable<any>{
+    return this.http.patch(`${this.urlMain}Tecnologias/${id}`, updateTec);
+  }
+
+   delTecnologiaId(id:number):Observable<any> {
+    return this.http.delete(`${this.urlMain}Tecnologias/${id}`);
+   }
+
 }

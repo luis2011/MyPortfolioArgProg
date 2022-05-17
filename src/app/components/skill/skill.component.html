@@ -1,8 +1,59 @@
 <section class="experience_skill">
   <div class="section_skill_title">
       <h2>Hard Skill & Soft Skills</h2>
-          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/add_icon.png" alt="pen-solid"></button>
+        <!-- Button trigger modal -->
+      <button  type="button" class="btn bg-light-50 " data-bs-toggle="modal" data-bs-target="#tecnoModal" >
+            <img src="./assets/add_icon.png" alt="pen-solid">
+          </button>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="tecnoModal" tabindex="-1" aria-labelledby="tecnoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tecnoModalLabel">Agregar Tecnología</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form
+        class="add-form"
+        (ngSubmit)="createTecno()"
+        >
+        <div class="form-control">
+          <label for="text">Descripcion de Habilidades</label>
+            <input
+              type="text"
+              name="descripcionHabilidades"
+              id="descripcionHabilidades"
+              [(ngModel)] ="descripcionHabilidades"
+              class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Porcentaje de Habilidades</label>
+            <input
+              type="number"
+              name="porcentajeHabilidades"
+              id="porcentajeHabilidades"
+              [(ngModel)] ="porcentajeHabilidades"
+              class="form-control"
+            />
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="createTecno()">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div *ngFor="let item of myTecnologia">
     <div class="skill" >
@@ -10,8 +61,10 @@
               <p>{{item.descripcionHabilidades}}</p>
           </div>
           <div>
-              <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/edit-pen.png" alt="pen-solid"></button>
-              <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/del_icon.png" alt="pen-solid"></button>
+            <button  type="button" class="btn bg-light-50 " data-bs-toggle="modal" data-bs-target="#tecnoUpModal" >
+              <img src="./assets/edit-pen.png" alt="pen-solid" (click)="editTecno(item.id)">
+            </button>
+              <button class="btn bg-light-50 " (click)="deleteTecno(item.id)"><img src="./assets/del_icon.png" alt="pen-solid"></button>
           </div>
 
   </div>
@@ -23,8 +76,56 @@
                aria-valuemax="100"
                style="width:{{item.porcentajeHabilidades}}%"
                >
-              <!-- consultar como asignar {{item.porcentajeHabilidades}} -->
             </div>
+         </div>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="tecnoUpModal" tabindex="-1" aria-labelledby="tecnoUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tecnoUpModalLabel">Modificar Tecnología</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form
+        class="add-form"
+        (ngSubmit)="updateTecno()"
+        >
+        <div class="form-control">
+          <label for="text">Descripcion de Habilidades</label>
+            <input
+              type="text"
+              name="descripcionHabilidades"
+              id="descripcionHabilidades"
+              [(ngModel)] ="descripcionHabilidades"
+              class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Porcentaje de Habilidades</label>
+            <input
+              type="number"
+              name="porcentajeHabilidades"
+              id="porcentajeHabilidades"
+              [(ngModel)] ="porcentajeHabilidades"
+              class="form-control"
+            />
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateTecno()">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
   </div>
+</div>
+
 </section>
