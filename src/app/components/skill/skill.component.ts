@@ -40,7 +40,7 @@ export class SkillComponent implements OnInit {
     this.dataTecnologia.addTecnologia(createTecno).subscribe(data => {
       this.dataTecnologia.getTecnologia().subscribe(data => {
         //console.log(data);
-          this. myTecnologia = data;
+          this.myTecnologia = data;
 
           this.id=0;
           this.descripcionHabilidades="";

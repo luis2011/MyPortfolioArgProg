@@ -1,8 +1,59 @@
 <section class="experience_project">
   <div class="section_project_title">
       <h2>Proyectos</h2>
-          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/add_icon.png" alt="pen-solid"></button>
+          <!-- Button trigger modal -->
+      <button  type="button" class="btn bg-light-50 " data-bs-toggle="modal" data-bs-target="#ProjModal" >
+        <img src="./assets/add_icon.png" alt="pen-solid">
+      </button>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="ProjModal" tabindex="-1" aria-labelledby="ProjModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ProjModalLabel">Agregar Proyecto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form
+        class="add-form"
+        (ngSubmit)="createProj()"
+        >
+        <div class="form-control">
+          <label for="text">Nombre del Proyecto</label>
+            <input
+              type="text"
+              name="nombreProyecto"
+              id="nombreProyecto"
+              [(ngModel)] ="nombreProyecto"
+              class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Descripción del Proyecto</label>
+            <input
+              type="number"
+              name="descripcionProyecto"
+              id="descripcionProyecto"
+              [(ngModel)] ="descripcionProyecto"
+              class="form-control"
+            />
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="createProj()">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div class="section_experience_project_card"  *ngFor="let item of myProyecto">
 
@@ -12,12 +63,62 @@
               <p>{{item.descripcionProyecto}}</p>
           </div>
       </div>
-      <div class="button_project">
-          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/edit-pen.png" alt="pen-solid"></button>
-          <button class="btn bg-light-50 " onclick="editAbout()"><img src="./assets/del_icon.png" alt="pen-solid"></button>
+      <div>
+      <button  type="button" class="btn bg-light-50 " data-bs-toggle="modal" data-bs-target="#ProyectUpModal" >
+        <img src="./assets/edit-pen.png" alt="pen-solid" (click)="editProj(item.id)">
+      </button>
+        <button class="btn bg-light-50 " (click)="deleteProj(item.id)"><img src="./assets/del_icon.png" alt="pen-solid"></button>
+      </div>
+  </div>
+
+      <div class="modal fade" id="ProyectUpModal" tabindex="-1" aria-labelledby="ProyectUpModallLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ProyectUpModalLabel">Modificar Tecnología</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form
+              class="add-form"
+              (ngSubmit)="updateProj()"
+              >
+              <div class="form-control">
+                <label for="text">Descripcion de Habilidades</label>
+                <input
+                type="text"
+                name="nombreProyecto"
+                id="nombreProyecto"
+                [(ngModel)] ="nombreProyecto"
+                class="form-control"
+              />
+          </div>
+
+          <div class="form-control">
+            <label for="text">Descripción del Proyecto</label>
+              <input
+                type="text"
+                name="descripcionProyecto"
+                id="descripcionProyecto"
+                [(ngModel)] ="descripcionProyecto"
+                class="form-control"
+              />
+              </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateProj()">
+                Guardar
+              </button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
-  </div>
+
 </section>
 
 
