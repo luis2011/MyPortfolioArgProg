@@ -8,8 +8,62 @@
                   <a href="#"><i class="fab fa-github fa-2x text-secondary p-1"></i></a>
                   <a href="#"><i class="fab fa-linkedin fa-2x text-secondary p-1"></i></a>
                   <a href="#"><i class="fab fa-whatsapp-square fa-2x text-secondary p-1"></i></a>
-                  <button class="btn btn-outline-success bg-dark" onclick="login()">Login</button>
+                 <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-success bg-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal">
+                 {{ botonLogin}}
+                </button>
           </div>
       </div>
   </nav>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Ingreso al Sistema</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form
+        class="add-form"
+        (ngSubmit)="login()"
+        >
+        <div class="form-control">
+          <label for="text">Ingrese Email</label>
+            <input
+              type="text"
+              name="loginEmail"
+              id="loginEmail"
+              [(ngModel)] ="loginEmail"
+              class="form-control"
+            />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Ingrese Password</label>
+            <input
+              type="password"
+              name="loginPassword"
+              id="loginPassword"
+              [(ngModel)] ="loginPassword"
+              class="form-control"
+
+            />
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="login()">Ingresar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </header>

@@ -40,7 +40,12 @@ export class ProfileComponent implements OnInit {
         this.myDomicilio = data;
       });
   }
- editPersona(id: number){
+
+
+  editPersona(id: number){
+
+
+
     this.dataPorfolio.getDataId(id).subscribe(data=> {
       this.id = (data.id);
       this.nombre=(data.nombre);
@@ -58,10 +63,15 @@ export class ProfileComponent implements OnInit {
       this.pais = (dataD.pais);
       console.log(this.pais)
       });
+
   }
 
   updatePersona(){
-      const {
+    if(localStorage.getItem('token')!=="abc123456"){
+      alert("debe estar logeado para poder editar")
+  }else{
+
+    const {
         id,
         nombre,
         apellido,
@@ -105,9 +115,11 @@ export class ProfileComponent implements OnInit {
             this.myDomicilio = data;
           });
       })
+    }
   }
 
   editAbout(id:number){
+
     //alert(id)
     this.dataPorfolio.getDataId(id).subscribe(data=> {
         this.id = (data.id);
@@ -117,7 +129,10 @@ export class ProfileComponent implements OnInit {
   }
 
   updateabout(){
-  const  {
+    if(localStorage.getItem('token')!=='abc123456'){
+      alert("debe estar logeado para poder editar")
+  }else{
+    const  {
       id,
       acercaDe
     } = this;
@@ -133,7 +148,7 @@ export class ProfileComponent implements OnInit {
 
           });
     });
-
+    }
   }
 
 
