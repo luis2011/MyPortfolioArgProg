@@ -13,7 +13,6 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="ProjModalLabel">Agregar Proyecto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form
@@ -34,7 +33,7 @@
         <div class="form-control">
           <label for="text">Descripción del Proyecto</label>
             <input
-              type="number"
+              type="text"
               name="descripcionProyecto"
               id="descripcionProyecto"
               [(ngModel)] ="descripcionProyecto"
@@ -71,12 +70,19 @@
       </div>
   </div>
 
-      <div class="modal fade" id="ProyectUpModal" tabindex="-1" aria-labelledby="ProyectUpModallLabel" aria-hidden="true">
+      <div class="modal fade"
+           id="ProyectUpModal"
+           tabindex="-1"
+           aria-labelledby="ProyectUpModallLabel"
+           aria-hidden="true"
+           data-bs-backdrop="static"
+           data-bs-keyboard="false"
+           aria-labelledby="staticBackdropLabel"
+           >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="ProyectUpModalLabel">Modificar Tecnología</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form
@@ -110,7 +116,7 @@
               <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateProj()">
                 Guardar
               </button>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="close()">
                 Cerrar
               </button>
             </div>

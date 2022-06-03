@@ -25,6 +25,11 @@ export class SkillComponent implements OnInit {
       });
   }
 
+  close(){
+    this.id=0;
+    this.descripcionHabilidades="";
+    this.porcentajeHabilidades="";
+  }
   createTecno(){
     const {
       id,

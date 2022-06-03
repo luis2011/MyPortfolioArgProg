@@ -18,33 +18,17 @@ export class HeaderComponent implements OnInit {
   token:string="";
   email:string="";
   pass:string="";
-  botonLogin:string="Login"
+  isLogin:boolean= false;
+  mostrar:string="Login";
 
 
   ngOnInit(): void {
 
   }
-  login(){
 
-      if (this.botonLogin === 'Logout'){
-          this.botonLogin = 'Login'
-          localStorage.removeItem('token');
-      }else{
 
-      this.dataAuth.getUser(1).subscribe(data => {
-      this.email = (data.email)
-      this.pass = (data.password)
-      this.token = (data.token)
 
-        if (this.loginEmail === this.email && this.loginPassword === this.pass){
-            localStorage.setItem('token', this.token)
-            this.botonLogin ="Logout"
-        }else{
-          alert("Email o Password Incorrecto");
-        }
-      })
-    }
-  }
+
 
 
 }

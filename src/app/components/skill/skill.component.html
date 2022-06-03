@@ -8,12 +8,24 @@
   </div>
 
 <!-- Modal -->
-<div class="modal fade" id="tecnoModal" tabindex="-1" aria-labelledby="tecnoModalLabel" aria-hidden="true">
+<div
+     class="modal fade"
+     id="tecnoModal"
+     aria-labelledby="tecnoModalLabel"
+     aria-hidden="true"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     >
+
+
+
+
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="tecnoModalLabel">Agregar Tecnología</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form
@@ -47,7 +59,7 @@
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="createTecno()">
           Guardar
         </button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="close()">
           Cerrar
         </button>
       </div>
@@ -74,19 +86,27 @@
                aria-valuenow="0"
                aria-valuemin="0"
                aria-valuemax="100"
-               style="width:{{item.porcentajeHabilidades}}%"
+               [style.width.%]= 'item.porcentajeHabilidades'
                >
             </div>
+            <!-- [style.width.%]= 'item.porcentajeHabilidades' -->
+            <!-- [ngStyle]="{'width': item.porcentajeHabilidades + '%'}" -->
          </div>
   </div>
 
 <!-- Modal -->
-<div class="modal fade" id="tecnoUpModal" tabindex="-1" aria-labelledby="tecnoUpModalLabel" aria-hidden="true">
+<div class="modal fade"
+id="tecnoUpModal"
+tabindex="-1"
+aria-labelledby="tecnoUpModalLabel"
+aria-hidden="true"
+data-bs-backdrop="static"
+data-bs-keyboard="false"
+aria-labelledby="staticBackdropLabel">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="tecnoUpModalLabel">Modificar Tecnología</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form
@@ -120,7 +140,7 @@
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateTecno()">
           Guardar
         </button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="close()">
           Cerrar
         </button>
       </div>

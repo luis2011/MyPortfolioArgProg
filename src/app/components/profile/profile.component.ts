@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProfileService } from '../profile/profile.service'
 
 @Component({
@@ -11,7 +11,30 @@ export class ProfileComponent implements OnInit {
   myPorfolio:any;
   myDomicilio:any;
 
+  // profileForm = new FormGroup({
+  //   id: new FormControl(""),
+  //   nombre: new FormControl("", Validators.required),
+  //   apellido: new FormControl("",Validators.required),
+  //   email: new FormControl("",[Validators.required , Validators.email]),
+  //   telefono: new FormControl("", Validators.required),
+  //   titulo: new FormControl("", Validators.required),
+  //   acercaDe: new FormControl("", Validators.required),
+  //   imagenDePerfil: new FormControl("", Validators.required),
+  //   /**domcilio*/
+  //   direccion:new FormControl("", Validators.required),
+  //   codigoPostal:new FormControl("", Validators.required),
+  //   localidad: new FormControl("", Validators.required),
+  //   pais: new FormControl("", Validators.required),
+  //   idPersona:new FormControl( 1, Validators.required),
+
+  //   }
+  // );
+
+
+
   constructor( private dataPorfolio:ProfileService , private dataDomicilio:ProfileService) { }
+
+
 
       id:number=0;
       nombre: string="";
@@ -44,11 +67,9 @@ export class ProfileComponent implements OnInit {
 
   editPersona(id: number){
 
-
-
     this.dataPorfolio.getDataId(id).subscribe(data=> {
       this.id = (data.id);
-      this.nombre=(data.nombre);
+      this.nombre = (data.nombre);
       this.apellido = (data.apellido);
       this.email = (data.email);
       this.telefono = (data.telefono);
@@ -67,11 +88,8 @@ export class ProfileComponent implements OnInit {
   }
 
   updatePersona(){
-    if(localStorage.getItem('token')!=="abc123456"){
-      alert("debe estar logeado para poder editar")
-  }else{
 
-    const {
+        const {
         id,
         nombre,
         apellido,
@@ -115,7 +133,7 @@ export class ProfileComponent implements OnInit {
             this.myDomicilio = data;
           });
       })
-    }
+
   }
 
   editAbout(id:number){
@@ -129,9 +147,6 @@ export class ProfileComponent implements OnInit {
   }
 
   updateabout(){
-    if(localStorage.getItem('token')!=='abc123456'){
-      alert("debe estar logeado para poder editar")
-  }else{
     const  {
       id,
       acercaDe
@@ -148,7 +163,7 @@ export class ProfileComponent implements OnInit {
 
           });
     });
-    }
+
   }
 
 

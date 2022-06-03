@@ -11,12 +11,15 @@
   </div>
 
 <!-- Modal Crear Experiencia -->
-<div class="modal fade" id="createExperience" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+<div class="modal fade" id="createExperience"
+tabindex="-1"
+aria-labelledby="exampleModalLabel3"
+aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel3">Agregar Experiencia</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" >
 
@@ -144,12 +147,14 @@ id="updateExperience"
 tabindex="-1"
 aria-labelledby="exampleModalLabel2"
 aria-hidden="true"
+data-bs-backdrop="static"
+data-bs-keyboard="false"
+aria-labelledby="staticBackdropLabel"
 >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel2">Modificar Experiencia</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
@@ -264,7 +269,7 @@ aria-hidden="true"
         <button type="button" class="btn btn-secondary" (click)="updateExperiencia()" data-bs-dismiss="modal" aria-label="Close">
           Guardar
        </button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeEx()">
           Cerrar
         </button>
       </div>
@@ -319,8 +324,8 @@ aria-hidden="true"
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel4">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel4">Agregar nueva Educación</h5>
+
       </div>
       <div class="modal-body">
 
@@ -423,12 +428,20 @@ aria-hidden="true"
       </div>
   </div>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+<div class="modal fade"
+id="exampleModal5"
+tabindex="-1"
+aria-labelledby="exampleModalLabel5"
+aria-hidden="true"
+data-bs-backdrop="static"
+data-bs-keyboard="false"
+aria-labelledby="staticBackdropLabel"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel5">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel5">Modificar Educación</h5>
+
       </div>
       <div class="modal-body">
 
@@ -503,7 +516,7 @@ aria-hidden="true"
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" (click)="updateEdu()" data-bs-dismiss="modal">Guardar</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="close()">Cerrar</button>
       </div>
     </div>
   </div>

@@ -23,8 +23,15 @@ export class ProjectComponent implements OnInit {
       });
   }
 
+  close(){
+    this.id = 0;
+    this.nombreProyecto ="";
+    this.descripcionProyecto = "";
+  }
+
   createProj(){
-    const {
+
+     const {
       id,
       nombreProyecto,
       descripcionProyecto

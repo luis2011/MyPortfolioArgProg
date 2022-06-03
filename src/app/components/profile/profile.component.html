@@ -89,6 +89,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+
         <form
         class="add-form"
         (ngSubmit)="updateabout()"
@@ -126,20 +127,24 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form
+
+<!-- [formGroup]="profileForm"
+     formControlName="nombre" -->
+
+     <form
         class="add-form"
         (ngSubmit)="updatePersona()"
         >
         <div class="form-control">
-          <label for="text">Nombre</label>
-            <input
-              type="text"
-              name="nombre"
-              id="nombre"
-              [(ngModel)] ="nombre"
-              class="form-control"
-            />
-        </div>
+            <label for="text">Nombre</label>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                [(ngModel)] ="nombre"
+                class="form-control"
+              />
+          </div>
         <div class="form-control">
           <label for="text">Apellido</label>
             <input
@@ -238,7 +243,7 @@
                 class="form-control"
               />
          </div>
-
+         <!-- {{profileForm.value|json}} -->
        </form>
       </div>
       <div class="modal-footer">

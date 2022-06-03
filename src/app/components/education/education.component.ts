@@ -49,6 +49,25 @@ export class EducationComponent implements OnInit {
         });
   }
 
+  closeEx(){
+    this.descripcionTrabajo="";
+    this.nombreEmpresa="";
+    this.tipoJornada="";
+    this.fechaEntrada="";
+    this.fechaSalida="";
+    this.localidad="";
+    this.pais="";
+    this.imagenDeEmpresa="";
+  }
+
+  close(){
+    this.nombreInstitucion="";
+    this.nombreCarrera="";
+    this.fechaInicio ="";
+    this.fechaFin="";
+    this.imagenDeInstitucion;
+  }
+
   createNewExperiencia(){
     const {
         id,
@@ -227,6 +246,7 @@ export class EducationComponent implements OnInit {
 
       });
   }
+
 
   updateEdu(){
     const  {
