@@ -9,13 +9,13 @@
                     class="main_profile__imgProfile"> -->
       <h1>{{item.nombre}} {{item.apellido }}</h1>
       <h2>{{item.titulo}}</h2>
-      <p *ngFor="let itemD of myDomicilio">
-        {{itemD.localidad}} ({{itemD.pais}})
+
+        {{item.domicilio.localidad}} ({{item.domicilio.pais}})
 
       <button type="button" class="btn bg-light-50" data-bs-toggle="modal" data-bs-target="#personaModal"
           (click)="editPersona(item.id)">
           <img src="./assets/edit-pen.png" alt="pen-solid">
-      </button></p>
+      </button>
     </div>
 
     <div class="main_profile_data">
@@ -36,10 +36,9 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" >
-              <h4 *ngFor="let item of myDomicilio">
-                Domicilio: {{item.direccion}}
-              </h4>
+
               <h4 *ngFor="let item of myPorfolio">
+                 Domicilio: {{item.domicilio.direccion}}
                 Telefono: {{item.telefono}} <br>
                 Email: {{item.email}}</h4>
             </div>

@@ -9,7 +9,6 @@ import { ProfileService } from '../profile/profile.service'
 })
 export class ProfileComponent implements OnInit {
   myPorfolio:any;
-  myDomicilio:any;
 
   // profileForm = new FormGroup({
   //   id: new FormControl(""),
@@ -54,14 +53,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataPorfolio.getData().subscribe(data => {
-    //console.log(data);
-      this.myPorfolio = data;
-
+     this.myPorfolio = data ;
     });
-    this.dataDomicilio.getDomicilio().subscribe(data => {
-      //console.log(data);
-        this.myDomicilio = data;
-      });
   }
 
 
@@ -74,16 +67,15 @@ export class ProfileComponent implements OnInit {
       this.email = (data.email);
       this.telefono = (data.telefono);
       this.titulo = (data.titulo);
-      this.imagenDePerfil = (data.imagenDePerfil);
-      console.log(this.nombre)
-    });
-    this.dataDomicilio.getDomicilioId(id).subscribe(dataD => {
-      this.direccion = (dataD.direccion);
-      this.codigoPostal = (dataD.codigoPostal);
-      this.localidad = (dataD.localidad);
-      this.pais = (dataD.pais);
-      console.log(this.pais)
-      });
+      this.imagenDePerfil = (data.imagen_De_Perfil);
+      //console.log(this.nombre)
+      this.direccion = (data.domicilio.direccion);
+      this.codigoPostal = (data.domicilio.codigo_Postal);
+      this.localidad = (data.domicilio.localidad);
+      this.pais = (data.domicilio.pais);
+
+     });
+
 
   }
 
@@ -97,7 +89,6 @@ export class ProfileComponent implements OnInit {
         telefono,
         titulo,
         imagenDePerfil,
-        /**domcilio*/
         direccion,
         codigoPostal,
         localidad,
@@ -111,38 +102,30 @@ export class ProfileComponent implements OnInit {
         email ,
         telefono,
         titulo,
-        imagenDePerfil
+        imagenDePerfil,
+        domicilio: {
+              direccion,
+              codigoPostal,
+              localidad,
+              pais
+        }
+
       }
 
-      const upDomicilio = {
-        direccion,
-        codigoPostal,
-        localidad,
-        pais
-      }
       this.dataPorfolio.updatePersonaId(id , upPersona).subscribe(data => {
         this.dataPorfolio.getData().subscribe(data => {
-          //console.log(data);
             this.myPorfolio = data;
+        });
+      })
 
-          });
-      })
-      this.dataDomicilio.updateDomicilioId(id , upDomicilio).subscribe(data => {
-        this.dataDomicilio.getDomicilio().subscribe(data => {
-          //console.log(data);
-            this.myDomicilio = data;
-          });
-      })
 
   }
 
   editAbout(id:number){
 
-    //alert(id)
     this.dataPorfolio.getDataId(id).subscribe(data=> {
         this.id = (data.id);
         this.acercaDe=(data.acercaDe);
-        console.log(this.acercaDe);
       });
   }
 
@@ -156,11 +139,8 @@ export class ProfileComponent implements OnInit {
       acercaDe
     }
          this.dataPorfolio.updateAbout(id, sobreMi).subscribe((data:any) =>{
-         this.myPorfolio = data;
-         this.dataPorfolio.getData().subscribe(data => {
-          //console.log(data);
-            this.myPorfolio = data;
-
+          this.dataPorfolio.getData().subscribe(data => {
+              this.myPorfolio = data;
           });
     });
 

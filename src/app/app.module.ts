@@ -11,9 +11,14 @@ import { SkillComponent } from './components/skill/skill.component';
 import { ProjectComponent } from './components/project/project.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ProfileService } from './components/profile/profile.service';
+import { InterceptorService } from './service/interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +28,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     EducationComponent,
     SkillComponent,
     ProjectComponent,
-    FooterComponent
+    FooterComponent,
+    IniciarSesionComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +38,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [ProfileService,
+    {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

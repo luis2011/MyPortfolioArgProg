@@ -1,0 +1,32 @@
+<h1 class="m-5">Iniciar Sesión o Ingrese como invitado</h1>
+<form [formGroup]="form" class="m-5" (ngSubmit)="onEnviar($event)">
+  <div class="mb-3">
+    <label for="inputEmail" class="form-label">Nombre de Usuario (invitado)</label>
+    <input type="text" formControlName="nombreUsuario"
+    [ngClass]="{'is-invalid': nombreUsuario?.errors && nombreUsuario?.touched, 'is-valid':
+  !nombreUsuario?.errors && nombreUsuario?.touched}"
+    class="form-control" id="nombreUsuario">
+    <div *ngIf="nombreUsuario?.errors && nombreUsuario?.touched">
+      <p *ngIf="nombreUsuario?.hasError('required')" class="text-danger">
+        El nombre de Usuario es requerido
+      </p>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Contraseña (invitado)</label>
+    <input type="password" formControlName="password"
+    [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid':
+  !Password?.errors && Password?.touched}"
+    class="form-control" id="password">
+    <div *ngIf="Password?.errors && Password?.touched">
+      <p *ngIf="Password?.hasError('required')" class="text-danger">
+        El contraseña es requerido o no tiene un maximo de 8 o mas caracteres
+      </p>
+      <!-- <p *ngIf="Password?.errors?.minlength" class="text-danger">
+        El nombre de Usuario es requerido
+      </p> -->
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
