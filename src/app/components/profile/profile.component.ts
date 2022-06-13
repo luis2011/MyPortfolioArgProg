@@ -41,11 +41,12 @@ export class ProfileComponent implements OnInit {
       email: string="";
       telefono: string="";
       titulo: string="";
-      acercaDe: string="";
-      imagenDePerfil: string="";
+      acerca_De: string="";
+      imagen_De_Perfil: string="";
       /**domcilio*/
+      id_domicilio:number=0;
       direccion:string="";
-      codigoPostal:string="";
+      codigo_Postal:string="";
       localidad: string="";
       pais: string="";
       idPersona:number=1;
@@ -53,100 +54,87 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataPorfolio.getData().subscribe(data => {
-     this.myPorfolio = data ;
+      this.myPorfolio = data ;
     });
   }
 
+editPersona(id: number){
+    this.obtenerData(id);
+  }
+  editAbout(id:number){
+     this.obtenerData(id);
+  }
+  updatePersona(){
+    this.enviarData()
+  }
+updateabout(){
+    this.enviarData()
+  }
 
-  editPersona(id: number){
-
+  obtenerData(id:number){
     this.dataPorfolio.getDataId(id).subscribe(data=> {
+      //console.log(data)
       this.id = (data.id);
+      this.acerca_De = (data.acerca_De)
       this.nombre = (data.nombre);
       this.apellido = (data.apellido);
       this.email = (data.email);
       this.telefono = (data.telefono);
       this.titulo = (data.titulo);
-      this.imagenDePerfil = (data.imagen_De_Perfil);
-      //console.log(this.nombre)
+      this.imagen_De_Perfil = (data.imagen_De_Perfil);
+      this.id_domicilio = (data.id);
       this.direccion = (data.domicilio.direccion);
-      this.codigoPostal = (data.domicilio.codigo_Postal);
+      this.codigo_Postal = (data.domicilio.codigo_Postal);
       this.localidad = (data.domicilio.localidad);
       this.pais = (data.domicilio.pais);
-
      });
-
-
   }
 
-  updatePersona(){
+  enviarData(){
+    const {
+      id,
+      acerca_De,
+      nombre,
+      apellido,
+      email ,
+      telefono,
+      titulo,
+      imagen_De_Perfil,
+      id_domicilio,
+      direccion,
+      codigo_Postal,
+      localidad,
+      pais
+  } = this;
 
-        const {
-        id,
-        nombre,
-        apellido,
-        email ,
-        telefono,
-        titulo,
-        imagenDePerfil,
-        direccion,
-        codigoPostal,
-        localidad,
-        pais
-    } = this;
-
-      const upPersona = {
-        id,
-        nombre,
-        apellido,
-        email ,
-        telefono,
-        titulo,
-        imagenDePerfil,
-        domicilio: {
-              direccion,
-              codigoPostal,
-              localidad,
-              pais
-        }
-
+    const upPersona = {
+      id,
+      acerca_De,
+      nombre,
+      apellido,
+      email ,
+      telefono,
+      titulo,
+      imagen_De_Perfil,
+      id_domicilio,
+      domicilio: {
+            id_domicilio,
+            direccion,
+            codigo_Postal,
+            localidad,
+            pais
       }
 
-      this.dataPorfolio.updatePersonaId(id , upPersona).subscribe(data => {
-        this.dataPorfolio.getData().subscribe(data => {
-            this.myPorfolio = data;
-        });
-      })
-
-
-  }
-
-  editAbout(id:number){
-
-    this.dataPorfolio.getDataId(id).subscribe(data=> {
-        this.id = (data.id);
-        this.acercaDe=(data.acercaDe);
-      });
-  }
-
-  updateabout(){
-    const  {
-      id,
-      acercaDe
-    } = this;
-    const sobreMi = {
-      id,
-      acercaDe
     }
-         this.dataPorfolio.updateAbout(id, sobreMi).subscribe((data:any) =>{
-          this.dataPorfolio.getData().subscribe(data => {
-              this.myPorfolio = data;
-          });
-    });
 
+    this.dataPorfolio.updatePersona(upPersona).subscribe(data => {
+      this.dataPorfolio.getData().subscribe(data => {
+          this.myPorfolio = data;
+      });
+    })
   }
-
-
-
 
 }
+
+
+

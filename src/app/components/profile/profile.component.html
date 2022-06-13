@@ -40,7 +40,9 @@
               <h4 *ngFor="let item of myPorfolio">
                  Domicilio: {{item.domicilio.direccion}}
                 Telefono: {{item.telefono}} <br>
-                Email: {{item.email}}</h4>
+                Email: {{item.email}}
+              </h4>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -63,8 +65,9 @@
       <h2>Acerca de</h2>
     </div>
     <div class="section_about_description" *ngFor="let item of myPorfolio">
-      <p >
-        {{item.acercaDe}}
+
+      <p>
+        {{item.acerca_De}}
       </p>
     </div>
   </div>
@@ -96,9 +99,9 @@
         <div class="form-control">
          <textarea
           type="text"
-          name="acercaDe"
+          name="acerca_De"
           id="acercaDe"
-          [(ngModel)] = "acercaDe"
+          [(ngModel)] = "acerca_De"
           class="form-control">
          </textarea>
       </div>
@@ -192,9 +195,9 @@
           <label for="text">Imagen</label>
             <input
               type="text"
-              name="imagenDePerfil"
+              name="imagen_De_Perfil"
               id="imagenDePerfil"
-              [(ngModel)] ="imagenDePerfil"
+              [(ngModel)] ="imagen_De_Perfil"
               class="form-control"
             />
         </div>
@@ -214,9 +217,9 @@
           <label for="text">Código Postal</label>
               <input
                 type="text"
-                name="codigoPostal"
+                name="codigo_Postal"
                 id="codigoPostal"
-                [(ngModel)] = "codigoPostal"
+                [(ngModel)] = "codigo_Postal"
                 class="form-control"
               />
          </div>

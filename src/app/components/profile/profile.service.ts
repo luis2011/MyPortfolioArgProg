@@ -7,12 +7,15 @@ import { Observable } from 'rxjs'
 })
 export class ProfileService {
 
+  private urlMain = "http://127.0.0.1:8080"
+
   constructor(private http:HttpClient) { }
 
   //private urlMain = "http://127.0.0.1:3000/"
-  private urlMain = "http://127.0.0.1:8080/"
+
    getData():Observable<any> {
-    return this.http.get(`${this.urlMain}ver/persona`);// representa el http a consultar
+    return this.http.get(`${this.urlMain}/ver/persona`);// representa el http a consultar
+
 }
 
 
@@ -20,15 +23,20 @@ export class ProfileService {
 //   return this.http.get(`${this.urlMain}ver/persona/${id}`);
 // }
 getDataId(id:number): Observable<any> {
-  return this.http.get(`${this.urlMain}persona/${id}`);
+  return this.http.get(`${this.urlMain}/persona/${id}`);
+
 }
 
-updateAbout(id:number, updateMy: any): Observable<any> {
-    return this.http.patch(`${this.urlMain}edit/persona/${id}`, updateMy);
-  }
+//modifica solo acerca de mi
+ updateAbout(updateMyAbout: any): Observable<any> {
+   console.log(updateMyAbout);
+    return this.http.post(`${this.urlMain}/edit/persona`, updateMyAbout);
+}
 
-  updatePersonaId(id:number, updateMy: any): Observable<any> {
+// modifica la persona entera
+  updatePersona(updateMy: any): Observable<any> {
     console.log(updateMy);
-    return this.http.patch(`${this.urlMain}Persona/${id}`, updateMy);
+    return this.http.post(`${this.urlMain}/edit/persona`, updateMy);
+
   }
 }
