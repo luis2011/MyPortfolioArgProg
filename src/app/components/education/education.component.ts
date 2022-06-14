@@ -20,14 +20,14 @@ export class EducationComponent implements OnInit {
 
         // experience
         id:number=0;
-        descripcionTrabajo:string="";
-        nombreEmpresa:string="";
-        tipoJornada:string="";
-        fechaEntrada:string="";
-        fechaSalida:string="";
+        descripcion_Trabajo:string="";
+        nombre_Empresa:string="";
+        tipo_Jornada:string="";
+        fecha_Entrada:string="";
+        fecha_Salida:string="";
         localidad:string="";
         pais:string="";
-        imagenDeEmpresa:string="";
+        imagen_De_Empresa:string="";
         idPersona:number=1;
         //education
 
@@ -50,14 +50,14 @@ export class EducationComponent implements OnInit {
   }
 
   closeEx(){
-    this.descripcionTrabajo="";
-    this.nombreEmpresa="";
-    this.tipoJornada="";
-    this.fechaEntrada="";
-    this.fechaSalida="";
+    this.descripcion_Trabajo="";
+    this.nombre_Empresa="";
+    this.tipo_Jornada="";
+    this.fecha_Entrada="";
+    this.fecha_Salida="";
     this.localidad="";
     this.pais="";
-    this.imagenDeEmpresa="";
+    this.imagen_De_Empresa="";
   }
 
   close(){
@@ -71,26 +71,26 @@ export class EducationComponent implements OnInit {
   createNewExperiencia(){
     const {
         id,
-        descripcionTrabajo,
-        nombreEmpresa,
-        tipoJornada,
-        fechaEntrada,
-        fechaSalida,
+        descripcion_Trabajo,
+        nombre_Empresa,
+        tipo_Jornada,
+        fecha_Entrada,
+        fecha_Salida,
         localidad,
         pais,
-        imagenDeEmpresa,
+        imagen_De_Empresa,
         idPersona
       } = this
       const newExperience = {
         id,
-        descripcionTrabajo,
-        nombreEmpresa,
-        tipoJornada,
-        fechaEntrada,
-        fechaSalida,
+        descripcion_Trabajo,
+        nombre_Empresa,
+        tipo_Jornada,
+        fecha_Entrada,
+        fecha_Salida,
         localidad,
         pais,
-        imagenDeEmpresa,
+        imagen_De_Empresa,
         idPersona
       }
       this.dataExperiencia.createExperiencia(newExperience).subscribe((data: any) =>{
@@ -99,14 +99,14 @@ export class EducationComponent implements OnInit {
             this.myExperiencia = data;
 
             this.id=0;
-            this.descripcionTrabajo="";
-            this.nombreEmpresa="";
-            this.tipoJornada="";
-            this.fechaEntrada="";
-            this.fechaSalida="";
+            this.descripcion_Trabajo="";
+            this.nombre_Empresa="";
+            this.tipo_Jornada="";
+            this.fecha_Entrada="";
+            this.fecha_Salida="";
             this.localidad="";
             this.pais="";
-            this.imagenDeEmpresa="";
+            this.imagen_De_Empresa="";
             this.idPersona=1;
           });
       });
@@ -120,14 +120,14 @@ export class EducationComponent implements OnInit {
       //console.log(data);
        // this.myExperienciaId = data;
         this.id = (data.id);
-        this.descripcionTrabajo=(data.descripcionTrabajo);
-        this.nombreEmpresa=(data.nombreEmpresa);
-        this.tipoJornada=(data.tipoJornada);
-        this.fechaEntrada=(data.fechaEntrada);
-        this.fechaSalida=(data.fechaSalida);
+        this.descripcion_Trabajo=(data.descripcion_Trabajo);
+        this.nombre_Empresa=(data.nombre_Empresa);
+        this.tipo_Jornada=(data.tipo_Jornada);
+        this.fecha_Entrada=(data.fecha_Entrada);
+        this.fecha_Salida=(data.fecha_Salida);
         this.localidad=(data.localidad);
         this.pais=(data.pais);
-        this.imagenDeEmpresa=(data.imagenDeEmpresa);
+        this.imagen_De_Empresa=(data.imagen_De_Empresa);
       });
   }
 
@@ -136,26 +136,26 @@ export class EducationComponent implements OnInit {
    // alert("guardando" + this.descripcionTrabajo)
    const {
     id,
-    descripcionTrabajo,
-    nombreEmpresa,
-    tipoJornada,
-    fechaEntrada,
-    fechaSalida,
+    descripcion_Trabajo,
+    nombre_Empresa,
+    tipo_Jornada,
+    fecha_Entrada,
+    fecha_Salida,
     localidad,
     pais,
-    imagenDeEmpresa,
+    imagen_De_Empresa,
     idPersona
   } = this
   const updateExperience = {
     id,
-    descripcionTrabajo,
-    nombreEmpresa,
-    tipoJornada,
-    fechaEntrada,
-    fechaSalida,
+    descripcion_Trabajo,
+    nombre_Empresa,
+    tipo_Jornada,
+    fecha_Entrada,
+    fecha_Salida,
     localidad,
     pais,
-    imagenDeEmpresa,
+    imagen_De_Empresa,
     idPersona
   }
   this.dataExperiencia.updateExperiencia(id , updateExperience).subscribe((data: any) =>{
@@ -163,14 +163,14 @@ export class EducationComponent implements OnInit {
       //console.log(data);
         this.myExperiencia = data;
         this.id=0;
-        this.descripcionTrabajo="";
-        this.nombreEmpresa="";
-        this.tipoJornada="";
-        this.fechaEntrada="";
-        this.fechaSalida="";
+        this.descripcion_Trabajo="";
+        this.nombre_Empresa="";
+        this.tipo_Jornada="";
+        this.fecha_Entrada="";
+        this.fecha_Salida="";
         this.localidad="";
         this.pais="";
-        this.imagenDeEmpresa="";
+        this.imagen_De_Empresa="";
         this.idPersona=1;
       });
   });

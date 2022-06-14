@@ -36,7 +36,7 @@ class="add-form"
       id="descripcionTrabajo"
       placeholder="Ingrese una descripción del trabajo"
       class="form-control"
-      [(ngModel)] = "descripcionTrabajo"
+      [(ngModel)] = "descripcion_Trabajo"
       />
   </div>
 
@@ -48,7 +48,7 @@ class="add-form"
        id="nombreEmpresa"
        placeholder="Ingrese el nombre de la empresa"
        class="form-control"
-       [(ngModel)] = "nombreEmpresa"
+       [(ngModel)] = "nombre_Empresa"
        />
    </div>
 
@@ -60,7 +60,7 @@ class="add-form"
        id="tipoJornada"
        placeholder="Ingrese el tipo de Jornada"
        class="form-control"
-       [(ngModel)] = "tipoJornada"
+       [(ngModel)] = "tipo_Jornada"
        />
    </div>
 
@@ -72,7 +72,7 @@ class="add-form"
        id="fechaEntrada"
        placeholder="Ingrese fecha de Ingreso"
        class="form-control"
-       [(ngModel)] = "fechaEntrada"
+       [(ngModel)] = "fecha_Entrada"
        />
    </div>
 
@@ -84,7 +84,7 @@ class="add-form"
        id="fechaSalida"
        placeholder="Ingrese fecha de Egreso"
        class="form-control"
-       [(ngModel)] = "fechaSalida"
+       [(ngModel)] = "fecha_Salida"
        />
    </div>
 
@@ -120,11 +120,9 @@ class="add-form"
        id="imagenDeEmpresa"
        placeholder="Ingrese url de Imagen de la Empresa"
        class="form-control"
-       [(ngModel)] = "imagenDeEmpresa"
+       [(ngModel)] = "imagen_De_Empresa"
        />
    </div>
-
-   <input type="submit" value="Save Task" class="btn btn-block">
 </form>
 
       </div>
@@ -170,14 +168,11 @@ aria-labelledby="staticBackdropLabel"
       name="descripcionTrabajo"
       id="descripcionTrabajo"
       placeholder="Ingrese una descripción del trabajo"
-      [(ngModel)] = "descripcionTrabajo"
+      [(ngModel)] = "descripcion_Trabajo"
       class="form-control"
       />
       </div>
-
-
-
-    <div class="form-control">
+     <div class="form-control">
     <label for="text">Nombre de la Empresa</label>
     <input
        type="text"
@@ -185,7 +180,7 @@ aria-labelledby="staticBackdropLabel"
        id="nombreEmpresa"
        placeholder="Ingrese el nombre de la empresa"
        class="form-control"
-       [(ngModel)] = "nombreEmpresa"
+       [(ngModel)] = "nombre_Empresa"
        />
    </div>
 
@@ -197,7 +192,7 @@ aria-labelledby="staticBackdropLabel"
        id="tipoJornada"
        placeholder="Ingrese el tipo de Jornada"
        class="form-control"
-       [(ngModel)] = "tipoJornada"
+       [(ngModel)] = "tipo_Jornada"
        />
    </div>
 
@@ -209,7 +204,7 @@ aria-labelledby="staticBackdropLabel"
        id="fechaEntrada"
        placeholder="Ingrese fecha de Ingreso"
        class="form-control"
-       [(ngModel)] = "fechaEntrada"
+       [(ngModel)] = "fecha_Entrada"
        />
    </div>
 
@@ -221,7 +216,7 @@ aria-labelledby="staticBackdropLabel"
        id="fechaSalida"
        placeholder="Ingrese fecha de Egreso"
        class="form-control"
-       [(ngModel)] = "fechaSalida"
+       [(ngModel)] = "fecha_Salida"
        />
    </div>
 
@@ -257,7 +252,7 @@ aria-labelledby="staticBackdropLabel"
        id="imagenDeEmpresa"
        placeholder="Ingrese url de Imagen de la Empresa"
        class="form-control"
-       [(ngModel)] = "imagenDeEmpresa"
+       [(ngModel)] = "imagen_De_Empresa"
        />
    </div>
 
@@ -288,8 +283,8 @@ aria-labelledby="staticBackdropLabel"
             </div>
             <div>
                 <h2>{{item.descripcionTrabajo}}</h2>
-                <p>{{item.nombreEmpresa}} - {{item.tipoJornada}}</p>
-                <p>{{item.fechaEntrada}} - {{item.fechaSalida}}</p>
+                <p>{{item.nombre_Empresa}} - {{item.tipo_Jornada}}</p>
+                <p>{{item.fecha_Entrada}} - {{item.fecha_Salida}}</p>
                 <p>{{item.localidad}}, {{item.pais}}</p>
             </div>
         </div>
