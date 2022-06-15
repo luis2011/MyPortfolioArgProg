@@ -13,8 +13,8 @@ export class ProjectComponent implements OnInit {
   constructor(private dataProyecto:ProjectService) { }
 
   id:number = 0;
-  nombreProyecto:string="";
-  descripcionProyecto:string="";
+  nombre_Proyecto:string="";
+  descripcion_Proyecto:string="";
 
   ngOnInit(): void {
     this.dataProyecto.getProyecto().subscribe(data => {
@@ -25,29 +25,29 @@ export class ProjectComponent implements OnInit {
 
   close(){
     this.id = 0;
-    this.nombreProyecto ="";
-    this.descripcionProyecto = "";
+    this.nombre_Proyecto ="";
+    this.descripcion_Proyecto = "";
   }
 
   createProj(){
 
      const {
       id,
-      nombreProyecto,
-      descripcionProyecto
+      nombre_Proyecto,
+      descripcion_Proyecto
     }= this
     const createProj = {
       id,
-      nombreProyecto,
-      descripcionProyecto
+      nombre_Proyecto,
+      descripcion_Proyecto
     }
 
     this.dataProyecto.addProyecto(createProj).subscribe(data =>{
       this.dataProyecto.getProyecto().subscribe(data => {
          this.myProyecto = data;
         this.id = 0;
-        this.nombreProyecto ="";
-        this.descripcionProyecto = "";
+        this.nombre_Proyecto ="";
+        this.descripcion_Proyecto = "";
 
       })
     })
@@ -56,28 +56,28 @@ export class ProjectComponent implements OnInit {
   editProj(id:number){
     this.dataProyecto.getProyectoId(id).subscribe(data =>{
       this.id = (data.id);
-      this.nombreProyecto = (data.nombreProyecto);
-      this.descripcionProyecto = (data.descripcionProyecto);
+      this.nombre_Proyecto = (data.nombre_Proyecto);
+      this.descripcion_Proyecto = (data.descripcion_Proyecto);
     })
   }
 
   updateProj(){
     const {
       id,
-      nombreProyecto,
-      descripcionProyecto
+      nombre_Proyecto,
+      descripcion_Proyecto
     }= this
     const updateProj = {
       id,
-      nombreProyecto,
-      descripcionProyecto
+      nombre_Proyecto,
+      descripcion_Proyecto
     }
     this.dataProyecto.updateProyecto(id, updateProj).subscribe(data =>{
       this.dataProyecto.getProyecto().subscribe(data => {
          this.myProyecto = data;
         this.id = 0;
-        this.nombreProyecto ="";
-        this.descripcionProyecto = "";
+        this.nombre_Proyecto ="";
+        this.descripcion_Proyecto = "";
 
       })
     })
