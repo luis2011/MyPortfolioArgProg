@@ -14,32 +14,32 @@ export class SkillComponent implements OnInit {
   constructor(private dataTecnologia:SkillService) { }
 
   id:number=0;
-  descripcionHabilidades: string="";
-  porcentajeHabilidades:string="";
+  descripcion_Habilidades: string="";
+  porcentaje_Habilidades:string="";
 
 
   ngOnInit(): void {
     this.dataTecnologia.getTecnologia().subscribe(data => {
       //console.log(data);
-        this. myTecnologia = data;
+        this.myTecnologia = data;
       });
   }
 
   close(){
     this.id=0;
-    this.descripcionHabilidades="";
-    this.porcentajeHabilidades="";
+    this.descripcion_Habilidades="";
+    this.porcentaje_Habilidades="";
   }
   createTecno(){
     const {
       id,
-      descripcionHabilidades,
-      porcentajeHabilidades
+      descripcion_Habilidades,
+      porcentaje_Habilidades
     } = this
     const createTecno = {
       id,
-      descripcionHabilidades,
-      porcentajeHabilidades
+      descripcion_Habilidades,
+      porcentaje_Habilidades
     }
 
     this.dataTecnologia.addTecnologia(createTecno).subscribe(data => {
@@ -48,8 +48,8 @@ export class SkillComponent implements OnInit {
           this.myTecnologia = data;
 
           this.id=0;
-          this.descripcionHabilidades="";
-          this.porcentajeHabilidades="";
+          this.descripcion_Habilidades="";
+          this.porcentaje_Habilidades="";
         });
     });
   }
@@ -60,8 +60,8 @@ export class SkillComponent implements OnInit {
        console.log(data);
         // this.myExperienciaId = data;
          this.id = (data.id);
-         this.descripcionHabilidades=(data.descripcionHabilidades);
-         this.porcentajeHabilidades=(data.porcentajeHabilidades);
+         this.descripcion_Habilidades=(data.descripcion_Habilidades);
+         this.porcentaje_Habilidades=(data.porcentaje_Habilidades);
 
       });
   }
@@ -69,21 +69,21 @@ export class SkillComponent implements OnInit {
   updateTecno(){
     const  {
       id,
-      descripcionHabilidades,
-      porcentajeHabilidades
+      descripcion_Habilidades,
+      porcentaje_Habilidades
     } = this
     const updateTec = {
       id,
-      descripcionHabilidades,
-      porcentajeHabilidades
+      descripcion_Habilidades,
+      porcentaje_Habilidades
     }
-    this.dataTecnologia.updateTecnologia(id, updateTec).subscribe((data: any) =>{
+    this.dataTecnologia.updateTecnologia(updateTec).subscribe((data: any) =>{
 
     this.dataTecnologia.getTecnologia().subscribe(data => {
        //console.log(data);
          this.myTecnologia = data;
-         this.descripcionHabilidades="";
-         this.porcentajeHabilidades="";
+         this.descripcion_Habilidades="";
+         this.porcentaje_Habilidades="";
 
        });
    });

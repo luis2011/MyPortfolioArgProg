@@ -36,9 +36,9 @@
           <label for="text">Descripcion de Habilidades</label>
             <input
               type="text"
-              name="descripcionHabilidades"
+              name="descripcion_Habilidades"
               id="descripcionHabilidades"
-              [(ngModel)] ="descripcionHabilidades"
+              [(ngModel)] ="descripcion_Habilidades"
               class="form-control"
             />
         </div>
@@ -48,8 +48,8 @@
             <input
               type="number"
               name="porcentajeHabilidades"
-              id="porcentajeHabilidades"
-              [(ngModel)] ="porcentajeHabilidades"
+              id="porcentaje_Habilidades"
+              [(ngModel)] ="porcentaje_Habilidades"
               class="form-control"
             />
         </div>
@@ -70,7 +70,7 @@
   <div *ngFor="let item of myTecnologia">
     <div class="skill" >
           <div class="skill_align">
-              <p>{{item.descripcionHabilidades}}</p>
+              <p>{{item.descripcion_Habilidades}}</p>
           </div>
           <div>
             <button  type="button" class="btn bg-light-50 " data-bs-toggle="modal" data-bs-target="#tecnoUpModal" >
@@ -86,7 +86,7 @@
                aria-valuenow="0"
                aria-valuemin="0"
                aria-valuemax="100"
-               [style.width.%]= 'item.porcentajeHabilidades'
+               [style.width.%]= 'item.porcentaje_Habilidades'
                >
             </div>
             <!-- [style.width.%]= 'item.porcentajeHabilidades' -->
@@ -117,9 +117,9 @@ aria-labelledby="staticBackdropLabel">
           <label for="text">Descripcion de Habilidades</label>
             <input
               type="text"
-              name="descripcionHabilidades"
+              name="descripcion_Habilidades"
               id="descripcionHabilidades"
-              [(ngModel)] ="descripcionHabilidades"
+              [(ngModel)] ="descripcion_Habilidades"
               class="form-control"
             />
         </div>
@@ -128,9 +128,9 @@ aria-labelledby="staticBackdropLabel">
           <label for="text">Porcentaje de Habilidades</label>
             <input
               type="number"
-              name="porcentajeHabilidades"
+              name="porcentaje_Habilidades"
               id="porcentajeHabilidades"
-              [(ngModel)] ="porcentajeHabilidades"
+              [(ngModel)] ="porcentaje_Habilidades"
               class="form-control"
             />
         </div>

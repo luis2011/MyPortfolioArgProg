@@ -10,30 +10,30 @@ export class SkillService {
 
   constructor(private http:HttpClient) { }
 
-  private urlMain = "http://127.0.0.1:3000/"
+  private urlMain = "http://127.0.0.1:8080"
 
 
 
 
   //getTecnologia : obtengo todo sobre las tecnólogias que utilizo
   getTecnologia():Observable<any> {
-      return this.http.get(`${this.urlMain}Tecnologias`);// representa el http a consultar
+      return this.http.get(`${this.urlMain}/ver/skill`);// representa el http a consultar
   }
 
   getTecnologiaId(id:number):Observable<any> {
-    return this.http.get(`${this.urlMain}Tecnologias/${id}`);// representa el http a consultar
+    return this.http.get(`${this.urlMain}/skill/${id}`);// representa el http a consultar
   }
 
   addTecnologia(createTec:any):Observable<any>{
-    return this.http.post(`${this.urlMain}Tecnologias`, createTec);
+    return this.http.post(`${this.urlMain}/new/skill`, createTec);
   }
 
-  updateTecnologia(id:number, updateTec:any):Observable<any>{
-    return this.http.patch(`${this.urlMain}Tecnologias/${id}`, updateTec);
+  updateTecnologia(updateTec:any):Observable<any>{
+    return this.http.post(`${this.urlMain}/edit/skill`, updateTec);
   }
 
    delTecnologiaId(id:number):Observable<any> {
-    return this.http.delete(`${this.urlMain}Tecnologias/${id}`);
+    return this.http.delete(`${this.urlMain}/delete/skill/${id}`);
    }
 
 }
