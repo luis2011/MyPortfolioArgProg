@@ -31,11 +31,11 @@ export class EducationComponent implements OnInit {
         idPersona:number=1;
         //education
 
-       nombreInstitucion: string="";
-       nombreCarrera:string="";
-       fechaInicio:string="";
-       fechaFin:string="";
-       imagenDeInstitucion:string="";
+       nombre_Institucion: string="";
+       nombre_Carrera:string="";
+       fecha_Inicio:string="";
+       fecha_Fin:string="";
+       imagen_De_Institucion:string="";
 
 //Experiencia_laboral
   ngOnInit(): void {
@@ -44,7 +44,7 @@ export class EducationComponent implements OnInit {
         this.myExperiencia = data;
       });
       this.dataEducacion.getEducacion().subscribe(dataD => {
-       // console.log(dataD);
+        //console.log(dataD);
           this.myEducacion = dataD;
         });
   }
@@ -61,11 +61,11 @@ export class EducationComponent implements OnInit {
   }
 
   close(){
-    this.nombreInstitucion="";
-    this.nombreCarrera="";
-    this.fechaInicio ="";
-    this.fechaFin="";
-    this.imagenDeInstitucion;
+    this.nombre_Institucion="";
+    this.nombre_Carrera="";
+    this.fecha_Inicio ="";
+    this.fecha_Fin="";
+    this.imagen_De_Institucion;
   }
 
   createNewExperiencia(){
@@ -201,30 +201,30 @@ export class EducationComponent implements OnInit {
   createNewEducation(){
      const  {
        id,
-       nombreInstitucion,
-       nombreCarrera,
-       fechaInicio,
-       fechaFin,
-       imagenDeInstitucion
+       nombre_Institucion,
+       nombre_Carrera,
+       fecha_Inicio,
+       fecha_Fin,
+       imagen_De_Institucion
      } = this
 
      const createEducation = {
        id,
-      nombreInstitucion,
-      nombreCarrera,
-      fechaInicio,
-      fechaFin,
-      imagenDeInstitucion
+      nombre_Institucion,
+      nombre_Carrera,
+      fecha_Inicio,
+      fecha_Fin,
+      imagen_De_Institucion
      }
      this.dataEducacion.createEducacion(createEducation).subscribe((data: any) =>{
       this.dataEducacion.getEducacion().subscribe(data => {
         //console.log(data);
           this.myEducacion = data;
-          this.nombreInstitucion="";
-          this.nombreCarrera="";
-          this.fechaInicio ="";
-          this.fechaFin="";
-          this.imagenDeInstitucion;
+          this.nombre_Institucion="";
+          this.nombre_Carrera="";
+          this.fecha_Inicio ="";
+          this.fecha_Fin="";
+          this.imagen_De_Institucion;
 
         });
     });
@@ -238,11 +238,11 @@ export class EducationComponent implements OnInit {
        //console.log(data);
         // this.myExperienciaId = data;
          this.id = (data.id);
-         this.nombreInstitucion=(data.nombreInstitucion);
-         this.nombreCarrera=(data.nombreCarrera);
-         this.fechaInicio=(data.fechaInicio);
-         this.fechaFin=(data.fechaFin);
-         this.imagenDeInstitucion=(data.imagenDeInstitucion);
+         this.nombre_Institucion=(data.nombre_Institucion);
+         this.nombre_Carrera=(data.nombre_Carrera);
+         this.fecha_Inicio=(data.fecha_Inicio);
+         this.fecha_Fin=(data.fecha_Fin);
+         this.imagen_De_Institucion=(data.imagen_De_Institucion);
 
       });
   }
@@ -251,30 +251,30 @@ export class EducationComponent implements OnInit {
   updateEdu(){
     const  {
       id,
-      nombreInstitucion,
-      nombreCarrera,
-      fechaInicio,
-      fechaFin,
-      imagenDeInstitucion
+      nombre_Institucion,
+      nombre_Carrera,
+      fecha_Inicio,
+      fecha_Fin,
+      imagen_De_Institucion
     } = this
 
     const updateEducation = {
       id,
-     nombreInstitucion,
-     nombreCarrera,
-     fechaInicio,
-     fechaFin,
-     imagenDeInstitucion
+     nombre_Institucion,
+     nombre_Carrera,
+     fecha_Inicio,
+     fecha_Fin,
+     imagen_De_Institucion
     }
-    this.dataEducacion.updateEducacion(id, updateEducation).subscribe((data: any) =>{
+    this.dataEducacion.updateEducacion(updateEducation).subscribe((data: any) =>{
      this.dataEducacion.getEducacion().subscribe(data => {
        //console.log(data);
          this.myEducacion = data;
-         this.nombreInstitucion="";
-         this.nombreCarrera="";
-         this.fechaInicio ="";
-         this.fechaFin="";
-         this.imagenDeInstitucion;
+         this.nombre_Institucion="";
+         this.nombre_Carrera="";
+         this.fecha_Inicio ="";
+         this.fecha_Fin="";
+         this.imagen_De_Institucion;
 
        });
    });

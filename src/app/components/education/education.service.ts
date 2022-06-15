@@ -9,26 +9,26 @@ export class EducationService {
 
   constructor(private http:HttpClient) { }
 
-  private urlMain = "http://127.0.0.1:3000/"
+  private urlMain = "http://127.0.0.1:8080"
 
   //getEducacion : obtengo todo sobre mi educación
   getEducacion():Observable<any> {
-    return this.http.get(`${this.urlMain}Educacion`);// representa el http a consultar
+    return this.http.get(`${this.urlMain}/ver/educacion`);// representa el http a consultar
 }
 getEducacionId(id:number):Observable<any> {
-  return this.http.get(`${this.urlMain}Educacion/${id}`);// representa el http a consultar
+  return this.http.get(`${this.urlMain}/educacion/${id}`);// representa el http a consultar
 }
 
 createEducacion(createEdu: any):Observable<any> {
-  return this.http.post(`${this.urlMain}Educacion`, createEdu);// representa el http a consultar
+  return this.http.post(`${this.urlMain}/new/educacion`, createEdu);// representa el http a consultar
 }
 
-updateEducacion(id:number, updateExp: any): Observable<any> {
-  return this.http.put(`${this.urlMain}Educacion/${id}`, updateExp);
+updateEducacion(updateExp: any): Observable<any> {
+  return this.http.post(`${this.urlMain}/edit/educacion`, updateExp);
 }
 
 deleteEducacion(id:number): Observable<any> {
-  return this.http.delete(`${this.urlMain}Educacion/${id}`);
+  return this.http.delete(`${this.urlMain}/delete/educacion/${id}`);
 }
 
 }

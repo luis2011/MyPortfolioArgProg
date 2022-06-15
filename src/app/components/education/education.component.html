@@ -32,7 +32,7 @@ class="add-form"
    <label for="text">Descripción del Trabajo</label>
    <input
       type="text"
-      name="descripcionTrabajo"
+      name="descripcion_Trabajo"
       id="descripcionTrabajo"
       placeholder="Ingrese una descripción del trabajo"
       class="form-control"
@@ -44,7 +44,7 @@ class="add-form"
     <label for="text">Nombre de la Empresa</label>
     <input
        type="text"
-       name="nombreEmpresa"
+       name="nombre_Empresa"
        id="nombreEmpresa"
        placeholder="Ingrese el nombre de la empresa"
        class="form-control"
@@ -56,7 +56,7 @@ class="add-form"
     <label for="text">Tipo de Jornada</label>
     <input
        type="text"
-       name="tipoJornada"
+       name="tipo_Jornada"
        id="tipoJornada"
        placeholder="Ingrese el tipo de Jornada"
        class="form-control"
@@ -68,7 +68,7 @@ class="add-form"
     <label for="text">Fecha de Ingreso</label>
     <input
        type="date"
-       name="fechaEntrada"
+       name="fecha_Entrada"
        id="fechaEntrada"
        placeholder="Ingrese fecha de Ingreso"
        class="form-control"
@@ -80,7 +80,7 @@ class="add-form"
     <label for="text">Fecha de Egreso</label>
     <input
        type="date"
-       name="fechaSalida"
+       name="fecha_Salida"
        id="fechaSalida"
        placeholder="Ingrese fecha de Egreso"
        class="form-control"
@@ -116,7 +116,7 @@ class="add-form"
     <label for="text">Subir Imagen</label>
     <input
        type="text"
-       name="imagenDeEmpresa"
+       name="imagen_De_Empresa"
        id="imagenDeEmpresa"
        placeholder="Ingrese url de Imagen de la Empresa"
        class="form-control"
@@ -165,7 +165,7 @@ aria-labelledby="staticBackdropLabel"
           <label for="text">Descripción del Trabajo</label>
         <input
       type="text"
-      name="descripcionTrabajo"
+      name="descripcion_Trabajo"
       id="descripcionTrabajo"
       placeholder="Ingrese una descripción del trabajo"
       [(ngModel)] = "descripcion_Trabajo"
@@ -176,7 +176,7 @@ aria-labelledby="staticBackdropLabel"
     <label for="text">Nombre de la Empresa</label>
     <input
        type="text"
-       name="nombreEmpresa"
+       name="nombre_Empresa"
        id="nombreEmpresa"
        placeholder="Ingrese el nombre de la empresa"
        class="form-control"
@@ -188,7 +188,7 @@ aria-labelledby="staticBackdropLabel"
     <label for="text">Tipo de Jornada</label>
     <input
        type="text"
-       name="tipoJornada"
+       name="tipo_Jornada"
        id="tipoJornada"
        placeholder="Ingrese el tipo de Jornada"
        class="form-control"
@@ -200,7 +200,7 @@ aria-labelledby="staticBackdropLabel"
     <label for="text">Fecha de Ingreso</label>
     <input
        type="text"
-       name="fechaEntrada"
+       name="fecha_Entrada"
        id="fechaEntrada"
        placeholder="Ingrese fecha de Ingreso"
        class="form-control"
@@ -212,7 +212,7 @@ aria-labelledby="staticBackdropLabel"
     <label for="text">Fecha de Egreso</label>
     <input
        type="text"
-       name="fechaSalida"
+       name="fecha_Salida"
        id="fechaSalida"
        placeholder="Ingrese fecha de Egreso"
        class="form-control"
@@ -335,7 +335,7 @@ aria-labelledby="staticBackdropLabel"
             name="nombreInstitucion"
             id="nombreInstitucion"
             placeholder="Ingrese nombre de la institución"
-            [(ngModel)] = "nombreInstitucion"
+            [(ngModel)] = "nombre_Institucion"
             class="form-control"
             />
         </div>
@@ -347,7 +347,7 @@ aria-labelledby="staticBackdropLabel"
             name="nombreCarrera"
             id="nombreCarrera"
             placeholder="Ingrese nombre de la Carrera"
-            [(ngModel)] = "nombreCarrera"
+            [(ngModel)] = "nombre_Carrera"
             class="form-control"
             />
         </div>
@@ -359,7 +359,7 @@ aria-labelledby="staticBackdropLabel"
             name="fechaInicio"
             id="fechaInicio"
             placeholder="Ingrese fecha de Inicio"
-            [(ngModel)] = "fechaInicio"
+            [(ngModel)] = "fecha_Inicio"
             class="form-control"
             />
         </div>
@@ -371,7 +371,7 @@ aria-labelledby="staticBackdropLabel"
             name="fechaFin"
             id="fechaFin"
             placeholder="Ingrese fecha de Finalización"
-            [(ngModel)] = "fechaFin"
+            [(ngModel)] = "fecha_Fin"
             class="form-control"
             />
 
@@ -382,7 +382,7 @@ aria-labelledby="staticBackdropLabel"
                 name="imagenDeInstitucion"
                 id="imagenDeInstitucion"
                 placeholder="Ingrese nombre de la institución"
-                [(ngModel)] = "imagenDeInstitucion"
+                [(ngModel)] = "imagen_De_Institucion"
                 class="form-control"
                 />
             </div>
@@ -408,9 +408,9 @@ aria-labelledby="staticBackdropLabel"
               <img src="./assets/logo_utn.png" alt="utn logo" >
           </div>
           <div>
-              <h2>{{item.nombreInstitucion}}</h2>
-              <p>{{item.nombreCarrera}}</p>
-              <p>{{item.fechaInicio}} - {{item.fechaFin}}</p>
+              <h2>{{item.nombre_Institucion}}</h2>
+              <p>{{item.nombre_Carrera}}</p>
+              <p>{{item.fecha_Inicio}} - {{item.fecha_Fin}}</p>
           </div>
       </div>
 
@@ -452,7 +452,7 @@ aria-labelledby="staticBackdropLabel"
             name="nombreInstitucion"
             id="nombreInstitucion"
             placeholder="Ingrese nombre de la institución"
-            [(ngModel)] = "nombreInstitucion"
+            [(ngModel)] = "nombre_Institucion"
             class="form-control"
             />
         </div>
@@ -464,7 +464,7 @@ aria-labelledby="staticBackdropLabel"
             name="nombreCarrera"
             id="nombreCarrera"
             placeholder="Ingrese nombre de la Carrera"
-            [(ngModel)] = "nombreCarrera"
+            [(ngModel)] = "nombre_Carrera"
             class="form-control"
             />
         </div>
@@ -476,7 +476,7 @@ aria-labelledby="staticBackdropLabel"
             name="fechaInicio"
             id="fechaInicio"
             placeholder="Ingrese fecha de Inicio"
-            [(ngModel)] = "fechaInicio"
+            [(ngModel)] = "fecha_Inicio"
             class="form-control"
             />
         </div>
@@ -488,7 +488,7 @@ aria-labelledby="staticBackdropLabel"
             name="fechaFin"
             id="fechaFin"
             placeholder="Ingrese fecha de Finalización"
-            [(ngModel)] = "fechaFin"
+            [(ngModel)] = "fecha_Fin"
             class="form-control"
             />
 
@@ -499,7 +499,7 @@ aria-labelledby="staticBackdropLabel"
                 name="imagenDeInstitucion"
                 id="imagenDeInstitucion"
                 placeholder="Ingrese nombre de la institución"
-                [(ngModel)] = "imagenDeInstitucion"
+                [(ngModel)] = "imagen_De_Institucion"
                 class="form-control"
                 />
             </div>
