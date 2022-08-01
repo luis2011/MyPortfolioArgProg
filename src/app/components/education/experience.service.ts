@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ExperienceService {
   constructor(private http: HttpClient) {}
 
-  private urlMain = 'http://127.0.0.1:8080';
+  private urlMain = 'https://portfolioargentinaprog.herokuapp.com';
 
   /** EXPERIENCIA**/
   //getExperiencia : obtengo todas mis experiencias laborales
@@ -23,8 +23,8 @@ export class ExperienceService {
   createExperiencia(createExp: any): Observable<any> {
     return this.http.post(`${this.urlMain}/new/experiencia`, createExp);
   }
-  updateExperiencia(id:number, updateExp: any): Observable<any> {
-    return this.http.post(`${this.urlMain}/edit/experiencia/${id}`, updateExp);
+  updateExperiencia( updateExp: any): Observable<any> {
+    return this.http.post(`${this.urlMain}/edit/experiencia`, updateExp);
   }
 
   deleteExperiencia(id:number): Observable<any> {

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs'
 })
 export class ProfileService {
 
-  private urlMain = "http://127.0.0.1:8080"
+  private urlMain = "https://portfolioargentinaprog.herokuapp.com"
 
   constructor(private http:HttpClient) { }
 

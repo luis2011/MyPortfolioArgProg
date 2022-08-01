@@ -9,7 +9,7 @@ export class EducationService {
 
   constructor(private http:HttpClient) { }
 
-  private urlMain = "http://127.0.0.1:8080"
+  private urlMain = "https://portfolioargentinaprog.herokuapp.com"
 
   //getEducacion : obtengo todo sobre mi educación
   getEducacion():Observable<any> {

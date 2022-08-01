@@ -10,7 +10,7 @@ export class SkillService {
 
   constructor(private http:HttpClient) { }
 
-  private urlMain = "http://127.0.0.1:8080"
+  private urlMain = "https://portfolioargentinaprog.herokuapp.com"
 
 
 

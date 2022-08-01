@@ -158,7 +158,7 @@ export class EducationComponent implements OnInit {
     imagen_De_Empresa,
     idPersona
   }
-  this.dataExperiencia.updateExperiencia(id , updateExperience).subscribe((data: any) =>{
+  this.dataExperiencia.updateExperiencia(updateExperience).subscribe((data: any) =>{
     this.dataExperiencia.getExperiencia().subscribe(data => {
       //console.log(data);
         this.myExperiencia = data;

@@ -9,7 +9,7 @@ export class ProjectService {
 
   constructor(private http:HttpClient) { }
 
-  private urlMain = "http://127.0.0.1:8080"
+  private urlMain = "https://portfolioargentinaprog.herokuapp.com"
   //getProyecto: obtengo todos mis proyectos
   getProyecto():Observable<any> {
     return this.http.get(`${this.urlMain}/ver/proyecto`);// representa el http a consultar
